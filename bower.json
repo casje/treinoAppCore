@@ -1,0 +1,9 @@
+{
+    "name" : "treinoAspCore",
+    "private": true,
+    "dependencies": {
+        "bootstrap": "3.3.6",
+        "jquery": "2.2.3",
+        "normalize-css": "6.0.0"
+    }
+}

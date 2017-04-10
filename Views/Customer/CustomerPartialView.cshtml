@@ -1,0 +1,38 @@
+@model IEnumerable<Customer>
+<table class="table table-striped">
+    <tr>
+        <th>Ident</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email Address</th>
+        <th>Edit Register</th>
+        <th>Remove Register</th>
+    </tr>
+@foreach(var customer in Model)
+{
+    <tr>
+        <td>@customer.Ident</td>
+        <td>@customer.FirstName</td>
+        <td>@customer.LastName</td>
+        <td>@customer.PhoneNumber</td>
+        <td>@customer.EmailAddress</td>
+        <td>
+            @Html.ActionLink(
+                "Editar",
+                "Edit",
+                "Customer",
+                new { ident =  @customer.Ident},
+                null)
+        </td>
+        <td>
+            @Html.ActionLink(
+                "Excluir",
+                "Delete",
+                "Customer",
+                new { ident =  @customer.Ident},
+                null)
+        </td>
+    </tr>
+}
+</table>

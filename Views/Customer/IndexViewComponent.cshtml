@@ -1,0 +1,12 @@
+@model IEnumerable<Customer>
+@{
+    ViewData["title"] = "List Customer";
+}
+<h3>List Customer with Panel</h3>
+@foreach(var customer in @Model)
+{
+    @await Component.InvokeAsync("Customer", new { customer = @customer})
+}
+
+<br>
+<a class="btn btn-primary" asp-action="Create">Register</a>

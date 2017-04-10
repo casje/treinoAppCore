@@ -1,0 +1,10 @@
+@model IEnumerable<Customer>
+@{
+    ViewData["title"] = "List Customer";
+}
+<h3>List Customer</h3>
+
+@Html.Partial("CustomerPartialView", @Model)
+
+<br>
+<a class="btn btn-primary" asp-action="Create">Register</a>

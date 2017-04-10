@@ -1,0 +1,74 @@
+@model Customer
+@{
+    ViewData["title"] = "Edit Customer";
+}
+<h3>Edit Customer</h3>
+<br>
+<form asp-controller="Customer" asp-action="Edit">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert-danger" role="alert" asp-validation-summary="All"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">        
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <strong>@Model.Ident - @Model.FirstName @Model.LastName</strong>
+                </div>
+                <div class="panel-body">
+                    <input type="hidden" asp-for="Ident" />
+
+                    <div class="row form-item">
+                        <div class="col-md-2">
+                            <label asp-for="FirstName" class="control-label">First Name: </label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" asp-for="FirstName" class="form-control input-sm"/>
+                        </div>
+                    </div>
+
+                    <div class="row form-item">
+                        <div class="col-md-2">
+                            <label asp-for="LastName" class="control-label">Last Name: </label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" asp-for="LastName" class="form-control input-sm"/>
+                        </div>
+                    </div>
+
+                    <div class="row form-item">
+                        <div class="col-md-2">
+                            <label asp-for="PhoneNumber" class="control-label">Phone Number: </label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon" id="sizing-addon2">&#9742;</span>                                
+                                <input type="text" asp-for="PhoneNumber" aria-describedby="sizing-addon2" class="form-control input-sm"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-item">
+                        <div class="col-md-2">
+                            <label asp-for="EmailAddress" class="control-label">E-mail Address: </label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon" id="sizing-addon3">&#64;</span>                                
+                                <input type="text" asp-for="EmailAddress" aria-describedby="sizing-addon3" class="form-control input-sm"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-link" asp-action="Index">Cancel</a>
+                    <input type="submit" class="btn btn-success" value="Edit" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

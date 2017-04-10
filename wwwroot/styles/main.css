@@ -1,0 +1,12 @@
+th {
+    color: #ffffff;
+    background-color: #333;
+}
+
+.form-item {
+    margin-top: 10px;
+}
+
+.alert-danger ul li {
+    margin: 5px;
+}

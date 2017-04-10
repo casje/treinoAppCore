@@ -1,0 +1,32 @@
+﻿1.  Montar o projeto
+	<Project Sdk="Microsoft.NET.Sdk.Web">
+	  <PropertyGroup>
+	    <TargetFramework>netcoreapp1.1</TargetFramework>
+	    <PreserveCompilationContext>true</PreserveCompilationContext>
+	  </PropertyGroup>
+	  <ItemGroup>
+	    <Folder Include="wwwroot\" />
+	  </ItemGroup>
+	  <ItemGroup>
+	    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.1.1" />
+	    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+	    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.1" />
+	    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.1" /> 
+	  </ItemGroup>
+	</Project>
+
+2.  Configurar a aplicação para usar o Kestrel
+3.  Exibir página HTML - arquivo estático
+4.  Utilizar o Controller Home
+5.  Utilizar o Controller através da notação de rotas [Route]
+6.  Exibir Página através da View
+7.  Configurar o usar da View MasterPage
+8.  Usar a passagem de dados através do Model
+9.  Configurar o Repositório usando padrão IOC (Dependency Injection)
+10. Configurar a página de Exception para Desenvolvimento
+11. Configurar o uso das Tag Helpers
+12. Incluir o método de Inserção para o Model
+13. Realizar a validação o preenchimento do cadastro
+14. Configurar o uso do bower
+15. Utilizar Partial View
+16. Utilizar View Components

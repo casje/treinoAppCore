@@ -1,0 +1,70 @@
+@model Customer
+@{
+    ViewData["title"] = "Create Customer";
+}
+<h3>Register Customer</h3>
+<br>
+<form asp-action="Create">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert-danger" role="alert" asp-validation-summary="All"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">        
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5>Register of the Customer</h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row form-item">
+                        <div class="col-md-2">
+                            <label asp-for="FirstName" class="control-label">First Name: </label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" asp-for="FirstName" class="form-control input-sm"/>
+                        </div>
+                    </div>
+
+                    <div class="row form-item">
+                        <div class="col-md-2">
+                            <label asp-for="LastName" class="control-label">Last Name: </label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" asp-for="LastName" class="form-control input-sm"/>
+                        </div>
+                    </div>
+
+                    <div class="row form-item">
+                        <div class="col-md-2">
+                            <label asp-for="PhoneNumber" class="control-label">Phone Number: </label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon" id="sizing-addon2">&#9742;</span>                                
+                                <input type="text" asp-for="PhoneNumber" aria-describedby="sizing-addon2" class="form-control input-sm"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-item">
+                        <div class="col-md-2">
+                            <label asp-for="EmailAddress" class="control-label">E-mail Address: </label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon" id="sizing-addon3">&#64;</span>                                
+                                <input type="text" asp-for="EmailAddress" aria-describedby="sizing-addon3" class="form-control input-sm"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-link" asp-action="Index">Cancel</a>
+                    <input type="submit" class="btn btn-success" value="Register" />
+                </div>
+            </div>
+        </div>
+</form>

@@ -1,0 +1,80 @@
+@model Customer
+@{
+    ViewData["title"] = "Remove Customer";
+}
+<h3>Remove Customer</h3>
+<br>
+<form asp-controller="Customer" asp-action="Delete" class="form-inline">
+
+    <div class="row">
+        <div class="col-md-12">        
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <strong>@Model.Ident - @Model.FirstName @Model.LastName</strong>
+                </div>
+                <div class="panel-body">
+                    <input type="hidden" asp-for="Ident" />
+
+                    <div class="row form-item">
+                        <div class="col-md-2">
+                            <label asp-for="PhoneNumber" class="control-label">Phone Number: </label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon" id="sizing-addon2">&#9742;</span>
+                                <label class="control-label form-control input-sm" aria-describedby="sizing-addon2">@Model.PhoneNumber</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row form-item">
+                        <div class="col-md-2">
+                            <label asp-for="EmailAddress" class="control-label">E-mail Address: </label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon" id="sizing-addon3">&#64;</span>
+                                <label class="control-label form-control input-sm" aria-describedby="sizing-addon3">@Model.EmailAddress</label>                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-link" asp-action="Index">Cancel</a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalConfirm">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Confirm Operation</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4 class="lead">Tem certeza que deseja excluir o registro de um cliente?</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <strong>@Model.Ident - @Model.FirstName @Model.LastName</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a asp-controller="Customer" asp-action="Index" class="btn btn-link" data-dismiss="modal">Cancel</a>                            
+                            <input type="submit" class="btn btn-danger" value="Remove Definitive"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</form>
