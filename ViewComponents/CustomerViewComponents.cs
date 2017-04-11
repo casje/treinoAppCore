@@ -18,8 +18,8 @@ namespace treinoAppCore.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync(Customer customer)
         {
             //Implementar a regra para permitir somente telefone que iniciam com o digito 9
-            if(customer.PhoneNumber.IndexOf('9')<0){
-                customer.PhoneNumber = "8" + customer.PhoneNumber.Substring(1, 8);
+            if(customer.PhoneNumber.IndexOf('9')!=0){
+                customer.PhoneNumber = "9" + customer.PhoneNumber.Substring(1, 8);
             }
 
             return View(customer);
