@@ -21,8 +21,8 @@ namespace treinoAppCore
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logFactory)
         {
             logFactory
-                .AddConsole()
-                .AddDebug();
+                .AddConsole();
+                //.AddDebug();
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
